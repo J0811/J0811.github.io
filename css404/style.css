@@ -154,7 +154,7 @@ button:hover {
 
 /*--//wrapper--*/
 .w3l-error-61-404 .error-61-mian {
-  background: url(../images404/banner1.png) no-repeat bottom;
+  background: url(https://ghproxy.com/raw.githubusercontent.com/J0811/404page/main/images404/banner1.png) no-repeat bottom;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -327,7 +327,7 @@ background:transparent;
 
 @media (max-width:600px) {
   .w3l-error-61-404 .error-61-mian {
-    background: url(../images404/banner1.png) no-repeat right;
+    background: url(https://ghproxy.com/raw.githubusercontent.com/J0811/404page/main/images404/banner1.png) no-repeat right;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
