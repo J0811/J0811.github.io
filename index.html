@@ -65,23 +65,23 @@
   <script>
     var CONFIG = window.CONFIG || {};
     var ZHAOO = window.ZHAOO || {};
-    let imageUrl = "";
-    const defaultImageUrl = '/images/theme/welcome-image2.jpg';
-    // backgroundImage.js
-    // 使用 Fetch API 获取每日一图的 JSON 数据
-    fetch('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US')
-        .then(response => response.json())
-        .then(data => {
-            // 构造每日一图的完整 URL
-            
-            imageUrl = 'https://www.bing.com' + data.images[0].url;
-            console.log('Edge 每日一图链接:', imageUrl);
-    
-            // 将背景图片设置为每日一图
-          
-        })
-        .catch(error => console.error('Error fetching daily image:', error));
-    
+    // 默认图片链接
+    var dailyImageLink = '/images/theme/welcome-image2.jpg';
+    // 获取 Edge 每日一图的图片链接
+    fetch('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1')
+         .then(response => response.json())
+         .then(data => {
+            // 提取图片链接
+             var baseUrl = 'https://www.bing.com';
+            dailyImageLink = baseUrl + data.images[0].url;
+
+                // 在控制台输出图片链接（可选）
+                console.log('每日一图链接:', dailyImageLink);
+            })
+            .catch(error => {
+                console.error('获取图片链接失败:', error);
+                // 如果获取失败，dailyImageLink 仍将保留默认值
+            });
     CONFIG = {
       isHome: true,
       fancybox: true,
