@@ -9,9 +9,9 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-88GJ5QW33Q');
 </script>
+  
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -65,6 +65,23 @@
   <script>
     var CONFIG = window.CONFIG || {};
     var ZHAOO = window.ZHAOO || {};
+    let imageUrl = "";
+    const defaultImageUrl = '/images/theme/welcome-image2.jpg';
+    // backgroundImage.js
+    // 使用 Fetch API 获取每日一图的 JSON 数据
+    fetch('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US')
+        .then(response => response.json())
+        .then(data => {
+            // 构造每日一图的完整 URL
+            
+            imageUrl = 'https://www.bing.com' + data.images[0].url;
+            console.log('Edge 每日一图链接:', imageUrl);
+    
+            // 将背景图片设置为每日一图
+          
+        })
+        .catch(error => console.error('Error fetching daily image:', error));
+    
     CONFIG = {
       isHome: true,
       fancybox: true,
@@ -101,7 +118,7 @@
       },
       preview: {
         background: {
-          default: '',
+          default: 'url(${imageUrl})',
           api: ''
         },
         motto: {
